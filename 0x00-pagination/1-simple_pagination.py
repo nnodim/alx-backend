@@ -38,8 +38,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        A method named get_page that takes two integer 
-        arguments page with default value 1 and 
+        A method named get_page that takes two integer
+        arguments page with default value 1 and
         page_size with default value 10.
         """
         assert type(page) is int and page > 0
