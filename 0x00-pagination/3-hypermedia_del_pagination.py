@@ -41,7 +41,7 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        A get_hyper_index method with two integer arguments: 
+        A get_hyper_index method with two integer arguments:
         index with a None default value and page_size with default value of 10.
         """
         if index is None:
@@ -58,7 +58,6 @@ class Server:
             else:
                 value += 1
                 next_index += 1
-
         return {
             'index': index,
             'data': data,
