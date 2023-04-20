@@ -8,7 +8,7 @@ from base_caching import BaseCaching
 class LFUCache(BaseCaching):
     """
     A class LFUCache that inherits from
-    BaseCaching and is a caching system:
+    BaseCaching and is a caching system
     """
 
     def __init__(self):
@@ -26,7 +26,8 @@ class LFUCache(BaseCaching):
         if key is None or item is None:
             pass
         else:
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            l = len(self.cache_data)
+            if l >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 lfu = min(self.frequency.values())
                 lfu_keys = []
                 for x, y in self.frequency.items():
