@@ -56,7 +56,7 @@ class LFUCache(BaseCaching):
 
     def get(self, key):
         """
-        Return the value linked to a given key, or None
+        Return the value that corresponds to the key in the cached data
         """
         if key is not None and key in self.cache_data.keys():
             del self.usage[self.usage.index(key)]
