@@ -2,9 +2,12 @@
 """0. Basic dictionary
 """
 BaseCaching = __import__('base_caching').BaseCaching
+
+
 class BasicCache(BaseCaching):
     """
-    A class BasicCache that inherits from BaseCaching and is a caching system:
+    A class BasicCache that inherits from
+    BaseCaching and is a caching system:
     """
 
     def __init__(self):
