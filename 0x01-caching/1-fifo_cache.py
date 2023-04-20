@@ -12,22 +12,26 @@ class FIFOCache(BaseCaching):
     """
 
     def __init__(self):
-        """Constructor method"""
+        """initialize"""
         super().__init__()
-        self.order = []
+        self.queue = []
 
     def put(self, key, item):
         """
         Store a key-value pair
         """
         if key is None or item is None:
-            pass
-        elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            discarded = self.order.pop(0)
-            print("DISCARD: {}".format(discarded))
-            del self.cache_data[discarded]
-        self.order.append(key)
-        self.cache_data[key] = item
+            return
+        if key in self.cache_data:
+            self.queue.remove(key)
+        else:
+            length = len(self.cache_data)
+            if length >= BaseCaching.MAX_ITEMS:
+                print("DISCARD: {}".format(self.queue[0]))
+                del self.cache_data[self.queue[0]]
+                del self.queue[0]
+            self.queue.append(key)
+            self.cache_data[key] = item
 
     def get(self, key):
         """Returns the value in self.cache_data associated with key"""
