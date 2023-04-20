@@ -8,11 +8,13 @@ from base_caching import BaseCaching
 class LFUCache(BaseCaching):
     """
     A class LFUCache that inherits from
-    BaseCaching and is a caching system
+    BaseCaching and is a caching system:
     """
 
     def __init__(self):
-        """Initialize the cache"""
+        """
+        Initialize the cache data
+        """
         super().__init__()
         self.usage = []
         self.frequency = {}
@@ -27,13 +29,13 @@ class LFUCache(BaseCaching):
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
                 lfu = min(self.frequency.values())
                 lfu_keys = []
-                for key, value in self.frequency.items():
-                    if value == lfu:
-                        lfu_keys.append(key)
+                for x, y in self.frequency.items():
+                    if y == lfu:
+                        lfu_keys.append(x)
                 if len(lfu_keys) > 1:
                     lru_lfu = {}
-                    for key in lfu_keys:
-                        lru_lfu[key] = self.usage.index(key)
+                    for x in lfu_keys:
+                        lru_lfu[x] = self.usage.index(x)
                     discard = min(lru_lfu.values())
                     discard = self.usage[discard]
                 else:
@@ -54,7 +56,7 @@ class LFUCache(BaseCaching):
 
     def get(self, key):
         """
-        Return the value that corresponds to the key in the cached data
+        Return the value linked to a given key, or None
         """
         if key is not None and key in self.cache_data.keys():
             del self.usage[self.usage.index(key)]
