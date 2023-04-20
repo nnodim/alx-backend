@@ -31,6 +31,6 @@ class FIFOCache(BaseCaching):
 
     def get(self, key):
         """Returns the value in self.cache_data associated with key"""
-        if key is None or key not in self.cache_data:
-            return None
-        return self.cache_data[key]
+        if key is not None and key in self.cache_data:
+            return self.cache_data[key]
+        return None
