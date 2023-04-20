@@ -3,10 +3,14 @@
 2. LIFO Caching
 """
 BaseCaching = __import__('base_caching').BaseCaching
+
+
 class LIFOCache(BaseCaching):
     """
-    A class LIFOCache that inherits from BaseCaching and is a caching system
+    A class LIFOCache that inherits from
+    BaseCaching and is a caching system
     """
+
     def __init__(self):
         """
         Initialize the cache data
