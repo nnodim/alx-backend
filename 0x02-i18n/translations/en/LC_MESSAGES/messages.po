@@ -3,10 +3,9 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
-msgid "home_title"
-msgstr "Welcome to Holberton"
-msgid "home_header"
-msgstr "Hello world!"
+msgid ""
+msgstr ""
+
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2023-02-28 20:29-0800\n"
@@ -19,3 +18,9 @@ msgstr "Hello world!"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
+
+msgid "home_title"
+msgstr "Welcome to Holberton"
+
+msgid "home_header"
+msgstr "Hello world!"
